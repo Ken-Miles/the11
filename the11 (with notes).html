@@ -1,0 +1,86 @@
+// CHROMEBOOK SCRIPT
+<html>
+
+<head>
+    
+<link rel="shortcut icon" href="https://i.ibb.co/QrwTwB9/amogus-impostor.jpg" type="image/x-icon" /> // Image logo, change jpg link if you wish to change thumbnail
+    
+<style>
+body	{
+background: #000000;
+}
+
+</style>
+<script> function opennewsite()
+{
+window.open("file:///home/chronos/REPLACE WITH YOUR USER TOKEN/MyFiles/Downloads/the11.html", "_blank"); // This script is the page you want to open, replace to your needs.
+} 
+</script>
+<script>
+// Refresh Rate is how often you want to refresh the page 
+// based off the user inactivity. 
+var refresh_rate = 0; //<-- In seconds, change to your needs
+var last_user_action = 0;
+var has_focus = false;
+var lost_focus_count = 0;
+// If the user loses focus on the browser to many times 
+// we want to refresh anyway even if they are typing. 
+// This is so we don't get the browser locked into 
+// a state where the refresh never happens.    
+var focus_margin = 10; 
+
+// Reset the Timer on users last action
+function reset() {
+    last_user_action = 0;
+    console.log("Reset");
+}
+
+function windowHasFocus() {
+    has_focus = true;
+}
+
+function windowLostFocus() {
+    has_focus = false;
+    lost_focus_count++;
+    console.log(lost_focus_count + " <~ Lost Focus");
+}
+
+// Count Down that executes ever second
+setInterval(function () {
+    last_user_action++;
+    refreshCheck();
+}, 1000);
+
+// The code that checks if the window needs to reload
+function refreshCheck() {
+    var focus = window.onfocus;
+    if ((last_user_action >= refresh_rate && !has_focus && document.readyState == "complete") || lost_focus_count > focus_margin) {
+        window.location.reload(); // If this is called no reset is needed
+        reset(); // We want to reset just to make sure the location reload is not called.
+    }
+
+}
+window.addEventListener("focus", windowHasFocus, false);
+window.addEventListener("blur", windowLostFocus, false);
+window.addEventListener("click", reset, false);
+window.addEventListener("mousemove", reset, false);
+window.addEventListener("keypress", reset, false);
+window.addEventListener("scroll", reset, false);
+document.addEventListener("touchMove", reset, false);
+document.addEventListener("touchEnd", reset, false);
+</script>
+    
+<title> ROBIN DABANK ON TOP </title>
+
+</head>
+
+<body onload="opennewsite()"> // Runs script to open what link you put it at the top
+    
+<p style="color:#ffffff">
+ROBIN DABANK ON TOP AND YOU CAN'T DO NOTHIN BOUT IT
+</p>
+    
+<img src="https://i.ibb.co/h7ZBRKh/virus-1-1.png"> // Image I have show up when the script is running (You really don't need anything here)
+    
+</body>
+</html>
